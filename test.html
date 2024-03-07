@@ -1,0 +1,60 @@
+<html>
+<div id="calendar">
+
+</div>
+
+<script>
+  // Define the months and days of the week
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+// Get the current date
+const today = new Date();
+
+// Get the current month and year
+const currentMonth = today.getMonth();
+const currentYear = today.getFullYear();
+
+// Get the first day of the current month
+const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+
+// Get the number of days in the current month
+const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+// Create the calendar table
+let calendarTable = "<table><tr>";
+
+// Add the days of the week to the table
+for (let i = 0; i < daysOfWeek.length; i++) {
+  calendarTable += "<th>" + daysOfWeek[i] + "</th>";
+}
+
+calendarTable += "</tr><tr>";
+
+// Add the blank cells for the first week
+for (let i = 0; i < firstDayOfMonth; i++) {
+  calendarTable += "<td></td>";
+}
+
+// Add the days of the month to the table
+for (let i = 1; i <= daysInMonth; i++) {
+  calendarTable += "<td>" + i + "</td>";
+
+  // If this is the last day of the week, start a new row
+  if ((i + firstDayOfMonth) % 7 === 0 && i !== daysInMonth) {
+    calendarTable += "</tr><tr>";
+  }
+}
+
+// Add the blank cells for the last week
+for (let i = (firstDayOfMonth + daysInMonth) % 7; i < 7 && i !== 0; i++) {
+  calendarTable += "<td></td>";
+}
+
+calendarTable += "</tr></table>";
+
+// Display the calendar table
+document.getElementById("calendar").innerHTML = calendarTable;
+</script>
+</html>
+

@@ -1,0 +1,19 @@
+To highlight a present day in a calendar using JavaScript, you can use the `Date` object to get the current date and then update the corresponding element in the calendar. Here's an example:
+
+```javascript
+// Get the current date
+const today = new Date();
+
+// Get the day, month, and year
+const day = today.getDate();
+const month = today.getMonth() + 1; // Note: January is 0
+const year = today.getFullYear();
+
+// Find the corresponding element in the calendar
+const element = document.querySelector(`[data-date="${year}-${month}-${day}"]`);
+
+// Update the element to indicate that it's the present day
+element.classList.add('present-day');
+```
+
+In this example, we first create a new `Date` object to get the current date. We then extract the day, month, and year from this object. Next, we use `querySelector` to find the element in the calendar that corresponds to the current date (assuming that each element in the calendar has a `data-date` attribute that matches the format `YYYY-MM-DD`). Finally, we add a CSS class (`present-day`) to this element to indicate that it's the present day.

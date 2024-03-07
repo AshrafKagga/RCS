@@ -1,0 +1,58 @@
+/**
+* Template Name: PRS
+* Author: Ashraf k.
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+    scroll-behavior: smooth;
+}
+.bg-transparent {
+    background-color: #ffffff69 !important;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: #f6f9ff;
+    color: #444444;
+}
+
+a {
+    color: #f6f9ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffc451;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+font-family: "Nunito", sans-serif;
+}
+/* ===============================
+Log in secton
+================================== */
+.lbg{
+    background-image: url(../img/lbg6.webp);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#lg-form{
+    background: #000000cc;
+}
+#lg-form h1,h2,h3,h4,h5,h6{
+    color: #ffc451;
+}
+#lg-form .btn{
+    background: #ffc451;
+}
